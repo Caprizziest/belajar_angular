@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, inject } from '@angular/core';
 import { Buku, User, Peminjaman } from '../../mock/mock-buku'; 
 import { BukuDetail } from '../buku-detail/buku-detail';
 import { FormsModule } from '@angular/forms';
