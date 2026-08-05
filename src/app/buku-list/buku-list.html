@@ -1,0 +1,10 @@
+
+<h1>Buku sekarang: {{ currentBuku().judul }} oleh {{ currentBuku().pengarang }}</h1>
+
+<button (click)="currentBuku.set(Buku[3])">set buku</button>
+<button (click)="currentBuku.set(Buku[2])">set buku</button>
+
+
+<h1>keterangan pinjam:{{ keteranganPinjam() }}  </h1>
+
+<img [src]="currentBuku().sampulURL" alt="sampul buku"> 
