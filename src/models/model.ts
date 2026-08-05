@@ -4,6 +4,7 @@ export interface buku {
     tahun: number;
     genre: string;  
     sampulURL: string;
+    tersedia: boolean;
 }
 
 export interface user {

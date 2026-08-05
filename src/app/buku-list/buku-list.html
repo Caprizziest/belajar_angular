@@ -1,10 +1,22 @@
-
-<h1>Buku sekarang: {{ currentBuku().judul }} oleh {{ currentBuku().pengarang }}</h1>
-
+<!-- 
 <button (click)="currentBuku.set(Buku[3])">set buku</button>
 <button (click)="currentBuku.set(Buku[2])">set buku</button>
+ -->
+
+
+
+<div class="buku-grid">
+  @for (buku of Buku; track buku.judul) {
+    <app-buku-detail [buku]="buku"></app-buku-detail>
+  }
+</div>
+
+ @for (buku of Buku; track buku.judul) {
+    <button (click)="currentBuku.set(buku)"> {{ buku.judul }} </button>
+ }
 
 
 <h1>keterangan pinjam:{{ keteranganPinjam() }}  </h1>
 
-<img [src]="currentBuku().sampulURL" alt="sampul buku"> 
+<app-buku-detail [buku]="currentBuku()"></app-buku-detail>
+

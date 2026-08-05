@@ -1,9 +1,10 @@
 import { Component, signal, computed } from '@angular/core';
 import { Buku, User, Peminjaman } from '../../mock/mock-buku'; 
+import { BukuDetail } from '../buku-detail/buku-detail';
 
 @Component({
   selector: 'app-buku-list',
-  imports: [],
+  imports: [BukuDetail],
   templateUrl: './buku-list.html',
   styleUrl: './buku-list.css',
 })

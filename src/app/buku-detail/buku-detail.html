@@ -1,0 +1,14 @@
+<div class="book-card">
+  <img class="book-cover" [src]="buku().sampulURL" alt="sampul buku"> 
+  
+  <div class="book-info">
+    <p class="title">{{ buku().judul }}</p>
+    <p class="author">oleh {{ buku().pengarang }}</p>
+    @if (buku().tersedia) {
+        <p>✅ Tersedia</p>
+    } @else {
+        <p>❌ Sedang Dipinjam</p>
+    }
+  </div>
+</div>
+    
