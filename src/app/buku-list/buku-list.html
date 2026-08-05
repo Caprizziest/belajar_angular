@@ -20,3 +20,12 @@
 
 <app-buku-detail [buku]="currentBuku()"></app-buku-detail>
 
+<h1>Search For a Book</h1>
+<input type="text" [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)" placeholder="search for a book" />
+<ul>
+  @for (buku of filteredBook(); track buku.judul) {
+    <li>{{ buku.judul }}</li>
+  } @empty {
+    <li>No books found matching your search.</li>
+  }
+</ul>
