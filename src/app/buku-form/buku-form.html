@@ -1,11 +1,14 @@
-<form [formGroup]="bukuForm" (ngSubmit)="onSubmit()">
-    <div style="margin-bottom: 10px;">
-        <label>Judul Buku:</label>
-        <input type="text" formControlName="judul" />
-    </div>
-    <div style="margin-bottom: 10px;">
-        <label>Pengarang Buku:</label>
-        <input type="text" formControlName="pengarang" />
-    </div>
-    <button type="submit">Tambah Buku</button>
+<form [formGroup]="bukuForm" (ngSubmit)="onSubmit()" style="display: flex; flex-direction: column; max-width: 300px; margin: 2rem;">
+    
+    <mat-form-field appearance="outline" style="margin-bottom: 10px;">
+        <mat-label>Judul Buku</mat-label>
+        <input matInput type="text" formControlName="judul" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="margin-bottom: 10px;">
+        <mat-label>Pengarang Buku</mat-label>
+        <input matInput type="text" formControlName="pengarang" />
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit">Tambah Buku</button>
 </form>

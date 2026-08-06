@@ -1,10 +1,12 @@
 import { Component, signal, computed} from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { BukuList } from './buku-list/buku-list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, MatDividerModule, MatButtonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
