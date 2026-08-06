@@ -1,7 +1,9 @@
 import { Component, signal, computed, inject } from '@angular/core';
-import { Buku, User, Peminjaman } from '../../mock/mock-buku'; 
+import { Buku, User, Peminjaman } from '../../mock/mock-buku';
 import { BukuDetail } from '../buku-detail/buku-detail';
 import { FormsModule } from '@angular/forms';
+
+import { bukuService } from '../service/buku';
 
 @Component({
   selector: 'app-buku-list',
@@ -11,12 +13,18 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class BukuList {
-  Buku = Buku;
+
+  protected readonly bukuService = inject(bukuService);
+
+  // Buku = Buku;
   User = User;
-  Peminjaman = Peminjaman 
+  Peminjaman = Peminjaman
 
 
-  currentBuku = signal(Buku[1]);
+  currentBuku = signal(this.bukuService.allBooks()[1]);
+
+  // currentBuku = signal(Buku[1]);
+
   currentUser = signal(User[0]);
   currentPeminjam = signal(Peminjaman[0])
 
@@ -28,8 +36,8 @@ export class BukuList {
 
   filteredBook = computed(() => {
     const query = this.searchTerm().toLocaleLowerCase();
-    return this.Buku.filter(buku => {
-      return buku.judul.toLocaleLowerCase().includes(query);
+    return this.bukuService.allBooks().filter((buku) => {
+      return buku.judul.toLocaleLowerCase().includes(query); 
     })
   })
 }
