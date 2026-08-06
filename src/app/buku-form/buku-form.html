@@ -1,0 +1,11 @@
+<form [formGroup]="bukuForm" (ngSubmit)="onSubmit()">
+    <div style="margin-bottom: 10px;">
+        <label>Judul Buku:</label>
+        <input type="text" formControlName="judul" />
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label>Pengarang Buku:</label>
+        <input type="text" formControlName="pengarang" />
+    </div>
+    <button type="submit">Tambah Buku</button>
+</form>

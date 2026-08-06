@@ -10,7 +10,7 @@ import { BukuList } from './buku-list/buku-list';
 })
 export class App {
 
-  protected readonly title = signal('apalah ini coba');
+  protected readonly title = signal('ini');
 
   counter = signal(1);
 
