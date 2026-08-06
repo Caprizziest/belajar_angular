@@ -6,12 +6,12 @@
 
 
 <div class="buku-grid">
-  @for (buku of Buku; track buku.judul) {
+  @for (buku of bukuService.allBooks(); track buku.judul) {
     <app-buku-detail [buku]="buku"></app-buku-detail>
   }
 </div>
 
- @for (buku of Buku; track buku.judul) {
+ @for (buku of bukuService.allBooks(); track buku.judul) {
     <button (click)="currentBuku.set(buku)"> {{ buku.judul }} </button>
  }
 

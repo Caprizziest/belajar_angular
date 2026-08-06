@@ -1,7 +1,14 @@
 <h1>Belajar {{ title() }}</h1>
 
+<a routerLink="/buku-list">Buku List</a>
+
+<ul></ul>
+<a routerLink="/about-page">About Page</a>
+
 <h1>counter: {{ counter() }}</h1>
 <button (click)="counter.set(counter() + 1)">Tambah</button>
 <button (click)="resetCounter()">Reset</button> 
 
-<app-buku-list></app-buku-list>
+<!-- <app-buku-list></app-buku-list> -->
+
+<router-outlet></router-outlet>
